@@ -1,0 +1,37 @@
+* {
+    margin: 0;padding: 0;
+}
+
+/* spacing */
+h2 {
+    text-align: center;
+    padding: 1em;
+}
+
+main {
+    padding: 5em;
+    text-align: center;
+}
+
+button {
+    padding: 2em;
+    text-align: center;
+}
+
+/* COLORS */
+
+button {
+    background-color: hsl(287, 61%, 42%);
+    outline: transparent;
+    border: transparent;
+    transition: all ease-in-out 2ms ;
+}
+
+button:hover {
+    background-color: hsl(254, 51%, 30%);
+   cursor: pointer;
+}
+
+h1 {
+    color: hsl(0, 0%, 100%);
+}
