@@ -2,17 +2,6 @@ const url = "https://catfact.ninja/fact";
 const h1 = document.querySelector('h1');
 const button = document.querySelector('button');
 
-// Promises
-// const fetchData = () => {
-//     fetch(url)
-//         .then((response) => response.json())
-//         .then((data) => (h1.innerText = data.fact))
-//         .catch((e) => console.error(e))
-//         .finally(() => console.log("all done"));
-// };
-
-
-// Async Await
 const fetchData = async () => {
     try {
         const response = await fetch(url);
@@ -30,29 +19,18 @@ const fetchData = async () => {
     }
 };
 
-fetchData();
-
-
+// Call fetchData() initially
 fetchData();
 
 button.addEventListener('click', () => {
-    let newFact = true;
-    if (newFact) {
-        location.reload();
-    }
+    // Call fetchData() when the button is clicked
+    fetchData();
 });
 
-document.addEventListener('keydown', (e) => {
-    let newFact = false;
-    if (!newFact) {
-        // Check for the spacebar using e.code
-        if (e.code === "Space") {
-            location.reload();
-        }
+document.addEventListener('keydown', async (e) => {
+    // Check for the spacebar using e.code
+    if (e.code === "Space") {
+        // Call fetchData() when the spacebar is pressed
+        await fetchData();
     }
 });
- 
-
-
-
-
